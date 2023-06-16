@@ -8,22 +8,28 @@ const cartItems = [cartItem, cartItem];
 const TableItems = ({ type }) => {
 	return (
 		<table>
-			<tr>
-				<th>Item</th>
-				{type === "cart" &&
-					<th>Quantity</th>
-				}
-				<th>Price ($)</th>
-				<th>Action</th>
-			</tr>
+			<thead>
+				<tr>
+					<th>Item</th>
+					{type === "cart" &&
+						<th>Quantity</th>
+					}
+					<th>Price ($)</th>
+					<th>Action</th>
+				</tr>
+			</thead>
 
-			<TableItemRow item={type === "cart" ? cartItem : product} actionLabel={type === "cart" ? "Remove" : "Add"}></TableItemRow>
+			<tbody>
+				<TableItemRow item={type === "cart" ? cartItem : product} actionLabel={type === "cart" ? "Remove" : "Add"}></TableItemRow>
+			</tbody>
 
 			{type === "cart" &&
-				<tr>
-					<td colSpan={2}><b>Total price ($):</b></td>
-					<td>{cartItems.reduce((acc, {quantity, price}) => acc + quantity*price, 0)}</td>
-				</tr>
+				<tfoot>
+					<tr>
+						<td colSpan={2}><b>Total price ($):</b></td>
+						<td>{cartItems.reduce((acc, {quantity, price}) => acc + quantity*price, 0)}</td>
+					</tr>
+				</tfoot>
 			}
 		</table>
 	);
