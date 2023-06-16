@@ -2,8 +2,8 @@ import TableItemRow from './TableItemRow';
 
 const product = { name: 'a', price: 2 };
 
-const item = { ...product, quantity: 2 };
-const items = [item, item];
+const cartItem = { ...product, quantity: 2 };
+const cartItems = [cartItem, cartItem];
 
 const TableItems = ({ type }) => {
 	return (
@@ -17,12 +17,12 @@ const TableItems = ({ type }) => {
 				<th>Action</th>
 			</tr>
 
-			<TableItemRow item={type == "cart" ? item : product} actionLabel={type == "cart" ? "Remove" : "Add"}></TableItemRow>
+			<TableItemRow item={type == "cart" ? cartItem : product} actionLabel={type == "cart" ? "Remove" : "Add"}></TableItemRow>
 
 			{type == "cart" &&
 				<tr>
 					<td colSpan={2}><b>Total price ($):</b></td>
-					<td>{items.reduce((acc, {price}) => acc + price, 0)}</td>
+					<td>{cartItems.reduce((acc, {price}) => acc + price, 0)}</td>
 				</tr>
 			}
 		</table>
