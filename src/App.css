@@ -3,6 +3,11 @@
   padding: 10px;
 }
 
-.App-header {
+.header {
   font-size: calc(10px + 2vmin);
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
 }
