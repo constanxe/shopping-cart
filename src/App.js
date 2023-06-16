@@ -1,17 +1,10 @@
-import TableItems from './components/TableItems';
+import Section from './components/Section';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <section>
-        <header className="header">
-          Your shopping cart 🛒
-        </header>
-
-          <tr>
-        <TableItems></TableItems>
-      </section>
+      <Section header="Your shopping cart 🛒"></Section>
     </div>
   );
 }
