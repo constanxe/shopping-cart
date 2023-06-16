@@ -3,7 +3,7 @@ import TableItemRow from './TableItemRow';
 const product = { name: 'a', price: 2 };
 
 const cartItem = { ...product, quantity: 2 };
-const cartItems = [cartItem, cartItem];
+const cartItems = [cartItem];
 
 const TableItems = () => {
 	return (
@@ -18,7 +18,9 @@ const TableItems = () => {
 			</thead>
 
 			<tbody>
-				<TableItemRow item={cartItem}></TableItemRow>
+				{cartItems.map((item, i) => (
+					<TableItemRow key={i} item={item}></TableItemRow>
+				))}
 			</tbody>
 
 			<tfoot>
