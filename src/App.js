@@ -1,4 +1,7 @@
+import TableItemRow from './components/TableItemRow';
 import './App.css';
+
+const item = {name: 'a', quantity: 2, price: 2.00};
 
 function App() {
   return (
@@ -16,12 +19,7 @@ function App() {
             <th>Action</th>
           </tr>
 
-          <tr>
-            <td>a</td>
-            <td>2</td>
-            <td>2.00</td>
-            <td><button>Remove</button></td>
-          </tr>
+          <TableItemRow item={item}></TableItemRow>
 
           <tr>
             <td colSpan={2}><b>Total price ($):</b></td>
