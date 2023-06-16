@@ -22,7 +22,7 @@ const TableItems = ({ type }) => {
 			{type == "cart" &&
 				<tr>
 					<td colSpan={2}><b>Total price ($):</b></td>
-					<td>{cartItems.reduce((acc, {price}) => acc + price, 0)}</td>
+					<td>{cartItems.reduce((acc, {quantity, price}) => acc + quantity*price, 0)}</td>
 				</tr>
 			}
 		</table>
