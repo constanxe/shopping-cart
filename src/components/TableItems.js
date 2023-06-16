@@ -10,16 +10,16 @@ const TableItems = ({ type }) => {
 		<table>
 			<tr>
 				<th>Item</th>
-				{type == "cart" &&
+				{type === "cart" &&
 					<th>Quantity</th>
 				}
 				<th>Price ($)</th>
 				<th>Action</th>
 			</tr>
 
-			<TableItemRow item={type == "cart" ? cartItem : product} actionLabel={type == "cart" ? "Remove" : "Add"}></TableItemRow>
+			<TableItemRow item={type === "cart" ? cartItem : product} actionLabel={type === "cart" ? "Remove" : "Add"}></TableItemRow>
 
-			{type == "cart" &&
+			{type === "cart" &&
 				<tr>
 					<td colSpan={2}><b>Total price ($):</b></td>
 					<td>{cartItems.reduce((acc, {quantity, price}) => acc + quantity*price, 0)}</td>
