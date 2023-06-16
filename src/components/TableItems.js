@@ -2,7 +2,7 @@ import TableItemRow from './TableItemRow';
 
 const item = { name: 'a', quantity: 2, price: 2.00 };
 
-const TableItems = () => {
+const TableItems = ({ type }) => {
 	return (
 		<table>
 			<tr>
@@ -12,7 +12,7 @@ const TableItems = () => {
 				<th>Action</th>
 			</tr>
 
-			<TableItemRow item={item}></TableItemRow>
+			<TableItemRow item={item} actionLabel={type == "products" ? "Add" : "Remove"}></TableItemRow>
 
 			<tr>
 				<td colSpan={2}><b>Total price ($):</b></td>

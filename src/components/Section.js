@@ -1,13 +1,13 @@
 import TableItems from './TableItems';
 
-const Section = ({ header }) => {
+const Section = ({ type, header }) => {
 	return (
 		<section>
 			<header className="header">
 				{header}
 			</header>
 
-			<TableItems></TableItems>
+			<TableItems type={type}></TableItems>
 		</section>
 	);
 };

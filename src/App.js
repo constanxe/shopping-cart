@@ -4,8 +4,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Section header="Products available 🛍"></Section>
-      <Section header="Your shopping cart 🛒"></Section>
+      <Section type="products" header="Products available 🛍"></Section>
+      <Section type="cart" header="Your shopping cart 🛒"></Section>
     </div>
   );
 }
