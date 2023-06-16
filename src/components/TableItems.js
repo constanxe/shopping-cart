@@ -1,6 +1,7 @@
 import TableItemRow from './TableItemRow';
 
-const item = { name: 'a', quantity: 2, price: 2.00 };
+const item = { name: 'a', quantity: 2, price: 2 };
+const items = [item, item];
 
 const TableItems = () => {
 	return (
@@ -16,7 +17,7 @@ const TableItems = () => {
 
 			<tr>
 				<td colSpan={2}><b>Total price ($):</b></td>
-				<td>2.00</td>
+				<td>{items.reduce((acc, {quantity, price}) => acc + quantity*price, 0)}</td>
 			</tr>
 		</table>
 	);
