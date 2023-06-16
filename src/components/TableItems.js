@@ -1,6 +1,8 @@
 import TableItemRow from './TableItemRow';
 
-const item = { name: 'a', quantity: 2, price: 2 };
+const product = { name: 'a', price: 2 };
+
+const item = { ...product, quantity: 2 };
 const items = [item, item];
 
 const TableItems = ({ type }) => {
@@ -8,17 +10,21 @@ const TableItems = ({ type }) => {
 		<table>
 			<tr>
 				<th>Item</th>
-				<th>Quantity</th>
+				{type == "cart" &&
+					<th>Quantity</th>
+				}
 				<th>Price ($)</th>
 				<th>Action</th>
 			</tr>
 
-			<TableItemRow item={item} actionLabel={type == "products" ? "Add" : "Remove"}></TableItemRow>
+			<TableItemRow item={type == "cart" ? item : product} actionLabel={type == "cart" ? "Remove" : "Add"}></TableItemRow>
 
-			<tr>
-				<td colSpan={2}><b>Total price ($):</b></td>
-				<td>{items.reduce((acc, {price}) => acc+price, 0)}</td>
-			</tr>
+			{type == "cart" &&
+				<tr>
+					<td colSpan={2}><b>Total price ($):</b></td>
+					<td>{items.reduce((acc, {price}) => acc + price, 0)}</td>
+				</tr>
+			}
 		</table>
 	);
 };
