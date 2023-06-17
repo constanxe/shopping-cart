@@ -1,4 +1,4 @@
-import { useCartDispatch } from '../state/CartContext';
+import { useCartDispatch } from '../store/cart/CartContext';
 
 import TableActionButton from './TableActionButton';
 

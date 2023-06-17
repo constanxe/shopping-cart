@@ -1,5 +1,5 @@
-import { useCart } from './state/CartContext';
-import { products } from './state/Products';
+import { useCart } from './store/cart/CartContext';
+import { products } from './store/products/Products';
 
 import Header from './components/Header';
 import TableItems from './components/TableItems';
