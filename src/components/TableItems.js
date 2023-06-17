@@ -11,10 +11,10 @@ const TableItems = ({ type }) => {
 			<thead>
 				<tr>
 					<th>Item</th>
+					<th>Price ($)</th>
 					{type === "cart" &&
 						<th>Quantity</th>
 					}
-					<th>Price ($)</th>
 					<th>Action</th>
 				</tr>
 			</thead>
