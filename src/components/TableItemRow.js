@@ -4,7 +4,7 @@ const TableItemRow = ({ item }) => {
 			<td>{item.name}</td>
 			<td>{item.price}</td>
 			{item.quantity &&
-				<td>{item.quantity}</td>
+				<td><button>-</button> {item.quantity} <button>+</button></td>
 			}
 			<td><button>{item.quantity ? "Remove" : "Add"}</button></td>
 		</tr>
