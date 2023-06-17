@@ -1,4 +1,5 @@
 import TableItemRow from './TableItemRow';
+import CartTableFooter from './CartTableFooter';
 
 const TableItems = ({ items }) => {
 	return (
@@ -20,15 +21,7 @@ const TableItems = ({ items }) => {
 				))}
 			</tbody>
 
-			{items[0].quantity &&
-				<tfoot>
-					<tr>
-						<td colSpan={2}><b>Total price ($):</b></td>
-						<td>{items.reduce((acc, {quantity, price}) => acc + quantity * price, 0)}</td>
-						<td><button>Clear</button></td>
-					</tr>
-				</tfoot>
-			}
+			{items[0].quantity && <CartTableFooter items={items}></CartTableFooter>}
 		</table>
 	);
 };
