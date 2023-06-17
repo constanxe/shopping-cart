@@ -2,7 +2,7 @@ import TableItemRow from './TableItemRow';
 import CartTableFooter from './CartTableFooter';
 
 const TableItems = ({ items }) => {
-	return (
+	return items?.length ? (
 		<table>
 			<thead>
 				<tr>
@@ -23,7 +23,7 @@ const TableItems = ({ items }) => {
 
 			{items[0].quantity && <CartTableFooter items={items}></CartTableFooter>}
 		</table>
-	);
+	) : <p>Start by adding a product from above</p>;
 };
 
 export default TableItems;
