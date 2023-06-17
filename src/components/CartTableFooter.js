@@ -1,4 +1,8 @@
-const CartTableFooter = ({ items }) => {
+import { useCart } from '../state/CartContext';
+
+const CartTableFooter = () => {
+	const items = useCart();
+
 	return (
 		<tfoot>
 			<tr>

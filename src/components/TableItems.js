@@ -21,7 +21,7 @@ const TableItems = ({ items }) => {
 				))}
 			</tbody>
 
-			{items[0].quantity && <CartTableFooter items={items}></CartTableFooter>}
+			{items[0].quantity && <CartTableFooter></CartTableFooter>}
 		</table>
 	) : <p>Start by adding a product from above</p>;
 };
