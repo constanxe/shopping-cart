@@ -11,8 +11,8 @@ const TableItems = () => {
 			<thead>
 				<tr>
 					<th>Item</th>
-					<th>Quantity</th>
 					<th>Price ($)</th>
+					<th>Quantity</th>
 					<th>Action</th>
 				</tr>
 			</thead>
