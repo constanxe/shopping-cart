@@ -11,9 +11,9 @@ const TableItemRow = ({ item }) => {
 			<td>{item.price}</td>
 			{item.quantity &&
 				<td>
-					<button onClick={() => dispatch({ type: 'decrease', name: item.name })} disabled={item.quantity <= 1}>-</button>
-					{item.quantity}
-					<button onClick={() => dispatch({ type: 'increase', name: item.name })}>+</button>
+					<button onClick={() => dispatch({ type: 'Decrease', name: item.name })} disabled={item.quantity <= 1}>-</button>&nbsp;
+					{item.quantity}&nbsp;
+					<button onClick={() => dispatch({ type: 'Increase', name: item.name })}>+</button>
 				</td>
 			}
 			<td><TableActionButton item={item}></TableActionButton></td>

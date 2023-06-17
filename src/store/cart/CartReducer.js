@@ -1,18 +1,18 @@
 export function cartReducer(cart, action) {
   switch (action.type) {
-    case 'add': {
+    case 'Add': {
       return add(cart, action.item);
     }
-    case 'decrease': {
+    case 'Decrease': {
 			return changeQuantity(cart, action.name, -1);
     }
-    case 'increase': {
+    case 'Increase': {
 			return changeQuantity(cart, action.name, 1);
     }
-    case 'remove': {
+    case 'Remove': {
       return remove(cart, action.item);
     }
-    case 'clear': {
+    case 'Clear': {
       return [];
     }
     default: {
