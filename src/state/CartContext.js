@@ -29,38 +29,38 @@ export function useCartDispatch() {
 
 function cartReducer(cart, action) {
   switch (action.type) {
-    case 'add': {
+    case 'add': { // item
       return [...cart, {
         ...action.item,
-        quantity: 0
+        quantity: 1
       }];
     }
-    case 'decrease': {
-      return cart.map(item => {
-        if (item.name === action.name) {
+    case 'decrease': { // name
+      return cart.map(c => {
+        if (c.name === action.name) {
           return {
-            ...item,
-            quantity: item.quantity - 1
+            ...c,
+            quantity: c.quantity - 1
           };
         } else {
-          return item;
+          return c;
         }
       });
     }
-    case 'increase': {
-      return cart.map(item => {
-        if (item.name === action.name) {
+    case 'increase': { // name
+      return cart.map(c => {
+        if (c.name === action.name) {
           return {
-            ...item,
-            quantity: item.quantity - 1
+            ...c,
+            quantity: c.quantity + 1
           };
         } else {
-          return item;
+          return c;
         }
       });
     }
-    case 'remove': {
-      return cart.filter(item => item.name !== action.name);
+    case 'remove': { // item
+      return cart.filter(c => c.name !== action.item.name);
     }
     case 'clear': {
       return [];
