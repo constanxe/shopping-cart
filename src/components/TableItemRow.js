@@ -6,17 +6,7 @@ const TableItemRow = ({ item }) => {
 			{item.quantity &&
 				<td>{item.quantity}</td>
 			}
-			<td>
-				{item.quantity ? (
-					<>
-						<button>-</button>
-						<button>+</button>
-						<button>x</button>
-					</>
-				) : (
-					<button>Add</button>
-				)}
-			</td>
+			<td><button>{item.quantity ? "Remove" : "Add"}</button></td>
 		</tr>
 	);
 };
