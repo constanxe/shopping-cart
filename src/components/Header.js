@@ -1,7 +1,7 @@
-const Header = ({ header }) => {
+const Header = ({ children }) => {
 	return (
 		<header className="header">
-			{header}
+			{children}
 		</header>
 	);
 };

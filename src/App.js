@@ -9,12 +9,12 @@ function App() {
   return (
     <div className="App">
       <section>
-        <Header header="Products available 🛍"></Header>
+        <Header>Products available 🛍</Header>
         <TableItems items={products}></TableItems>
       </section>
 
       <section>
-        <Header header="Your shopping cart 🛒"></Header>
+        <Header>Your shopping cart 🛒</Header>
         <TableItems items={useCart()}></TableItems>
       </section>
     </div>
