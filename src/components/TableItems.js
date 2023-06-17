@@ -1,11 +1,6 @@
 import TableItemRow from './TableItemRow';
 
-const product = { name: 'a', price: 2 };
-
-const cartItem = { ...product, quantity: 2 };
-const cartItems = [cartItem];
-
-const TableItems = () => {
+const TableItems = ({ items }) => {
 	return (
 		<table>
 			<thead>
@@ -18,7 +13,7 @@ const TableItems = () => {
 			</thead>
 
 			<tbody>
-				{cartItems.map((item, i) => (
+				{items.map((item, i) => (
 					<TableItemRow key={i} item={item}></TableItemRow>
 				))}
 			</tbody>
@@ -26,7 +21,7 @@ const TableItems = () => {
 			<tfoot>
 				<tr>
 					<td colSpan={2}><b>Total price ($):</b></td>
-					<td>{cartItems.reduce((acc, {quantity, price}) => acc + quantity * price, 0)}</td>
+					<td>{items.reduce((acc, {quantity, price}) => acc + quantity * price, 0)}</td>
 					<td><button>Clear</button></td>
 				</tr>
 			</tfoot>
