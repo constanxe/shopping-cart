@@ -7,7 +7,9 @@ const TableItems = ({ items }) => {
 				<tr>
 					<th>Item</th>
 					<th>Price ($)</th>
-					<th>Quantity</th>
+					{items[0].quantity &&
+						<th>Quantity</th>
+					}
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -18,13 +20,15 @@ const TableItems = ({ items }) => {
 				))}
 			</tbody>
 
-			<tfoot>
-				<tr>
-					<td colSpan={2}><b>Total price ($):</b></td>
-					<td>{items.reduce((acc, {quantity, price}) => acc + quantity * price, 0)}</td>
-					<td><button>Clear</button></td>
-				</tr>
-			</tfoot>
+			{items[0].quantity &&
+				<tfoot>
+					<tr>
+						<td colSpan={2}><b>Total price ($):</b></td>
+						<td>{items.reduce((acc, {quantity, price}) => acc + quantity * price, 0)}</td>
+						<td><button>Clear</button></td>
+					</tr>
+				</tfoot>
+			}
 		</table>
 	);
 };

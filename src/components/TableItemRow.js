@@ -3,8 +3,10 @@ const TableItemRow = ({ item }) => {
 		<tr>
 			<td>{item.name}</td>
 			<td>{item.price}</td>
-			<td>{item.quantity}</td>
-			<td><button>Remove</button></td>
+			{item.quantity &&
+				<td>{item.quantity}</td>
+			}
+			<td><button>{item.quantity ? "Remove" : "Add"}</button></td>
 		</tr>
 	);
 };
