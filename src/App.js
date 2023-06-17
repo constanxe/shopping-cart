@@ -1,4 +1,4 @@
-import { CartProvider, useCart } from './state/CartContext';
+import { useCart } from './state/CartContext';
 import { products } from './state/Products';
 
 import Header from './components/Header';
@@ -13,12 +13,10 @@ function App() {
         <TableItems items={products}></TableItems>
       </section>
 
-      <CartProvider>
-        <section>
-          <Header header="Your shopping cart 🛒"></Header>
-          <TableItems items={useCart()}></TableItems>
-        </section>
-      </CartProvider>
+      <section>
+        <Header header="Your shopping cart 🛒"></Header>
+        <TableItems items={useCart()}></TableItems>
+      </section>
     </div>
   );
 }
