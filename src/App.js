@@ -1,4 +1,7 @@
-import Section from './components/Section';
+import { ProductsProvider } from './context/index';
+
+import Header from './components/Header';
+import TableItems from './components/TableItems';
 import './App.css';
 
 const products = [
@@ -11,8 +14,17 @@ const cartItem = { ...products[0], quantity: 2 };
 function App() {
   return (
     <div className="App">
-      <Section header="Products available 🛍" items={products}></Section>
-      <Section header="Your shopping cart 🛒" items={[cartItem]}></Section>
+      <ProductsProvider>
+        <section>
+          <Header header="Products available 🛍"></Header>
+          <TableItems items={products}></TableItems>
+        </section>
+      </ProductsProvider>
+
+      <section>
+        <Header header="Your shopping cart 🛒"></Header>
+        <TableItems items={[cartItem]}></TableItems>
+      </section>
     </div>
   );
 }
