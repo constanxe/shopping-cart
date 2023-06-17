@@ -1,14 +1,9 @@
-import { CartProvider, useCart } from './context/CartContext';
+import { CartProvider, useCart } from './state/CartContext';
+import { products } from './state/Products';
 
 import Header from './components/Header';
 import TableItems from './components/TableItems';
 import './App.css';
-
-const products = [
-  { name: 'A', price: 1 },
-  { name: 'B', price: 2 },
-  { name: 'C', price: 3 }
-];
 
 function App() {
   return (
