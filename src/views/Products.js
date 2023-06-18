@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { Header, TableItems, Hint } from '../components/index';
+import { Header, Hint, TableItems } from '../components/index';
 
 const Products = () => {
 	const [products, setProducts] = useState([]);
@@ -16,7 +16,7 @@ const Products = () => {
 		<>
 			<Header>Products available 🛍</Header>
 			<TableItems items={products}></TableItems>
-			{!products.length && <Hint>Start by adding a product</Hint>}
+			{!products.length && <Hint></Hint>}
 		</>
   );
 }

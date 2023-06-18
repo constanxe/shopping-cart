@@ -1,5 +1,5 @@
 import { useCart } from '../contexts/index';
-import { Header, TableItems, Hint } from '../components/index';
+import { Header, Hint, TableItems } from '../components/index';
 
 const Cart = () => {
 	const cart = useCart();
