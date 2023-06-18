@@ -3,6 +3,7 @@ import { products } from './store/products/Products';
 
 import Header from './components/Header';
 import TableItems from './components/TableItems';
+
 import './App.css';
 
 function App() {

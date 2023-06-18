@@ -2,10 +2,10 @@
 
 ## Features
 
-	- add items from products table
-	- remove items from cart
-	- change quantity of items in cart
-	- calculates total price of cart
+- add items from products table
+- remove items from cart
+- change quantity of items in cart
+- calculates total price of cart
 
 
 ## Available Scripts
