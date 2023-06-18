@@ -3,9 +3,10 @@
 ## Features
 
 - add items from products table
-- remove items from cart
-- change quantity of items in cart
-- calculates total price of cart
+- change quantity of items
+- remove items
+- calculates total price
+- clear cart
 
 
 ## Setup
