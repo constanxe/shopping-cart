@@ -5,13 +5,15 @@ const TableActionButton = ({ item }) => {
 	const dispatch = useCartDispatch();
 
 	const type = item.quantity ? "Remove" : "Add";
+	const isAdded = type === "Add" && cart.find(c => c.title === item.title);
 
 	return (
 		<button
 			onClick={() => dispatch({ type, item })}
-			disabled={type === "Add" && cart.find(c => c.title === item.title)}
+			disabled={isAdded}
+			title={isAdded ? "Saved to cart" : "Click to save to cart"}
 		>
-			{type}
+			{isAdded ? "Added" : type}
 		</button>
 	);
 };
