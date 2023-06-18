@@ -1,5 +1,4 @@
-import { useCart } from './store/cart/CartContext';
-import { PRODUCTS } from './store/products/Products';
+import { useCart } from './context/cart/CartContext';
 
 import Header from './components/Header';
 import TableItems from './components/TableItems';
@@ -8,6 +7,11 @@ import './App.css';
 
 function App() {
   const cart = useCart();
+  const PRODUCTS = [
+    { name: 'A', price: 1 },
+    { name: 'B', price: 2 },
+    { name: 'C', price: 3 }
+  ];
 
   return (
     <div className="App">

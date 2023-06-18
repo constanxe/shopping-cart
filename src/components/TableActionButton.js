@@ -1,4 +1,4 @@
-import { useCart, useCartDispatch } from '../store/cart/CartContext';
+import { useCart, useCartDispatch } from '../context/cart/CartContext';
 
 const TableActionButton = ({ item }) => {
 	const cart = useCart();
