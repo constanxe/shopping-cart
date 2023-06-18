@@ -4,7 +4,7 @@ import TableActionButton from './TableActionButton';
 const TableItemRow = ({ item }) => {
 	return (
 		<tr>
-			<td>{item.name}</td>
+			<td>{item.title}</td>
 			<td>{item.price}</td>
 			{item.quantity &&
 				<td>

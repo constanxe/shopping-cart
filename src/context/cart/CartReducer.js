@@ -4,10 +4,10 @@ export function cartReducer(cart, action) {
       return add(cart, action.item);
     }
     case 'Decrease': {
-			return changeQuantity(cart, action.name, -1);
+			return changeQuantity(cart, action.title, -1);
     }
     case 'Increase': {
-			return changeQuantity(cart, action.name, 1);
+			return changeQuantity(cart, action.title, 1);
     }
     case 'Remove': {
       return remove(cart, action.item);
@@ -26,8 +26,8 @@ const add = (cart, item) => [...cart, {
 	quantity: 1
 }];
 
-const changeQuantity = (cart, name, change) => cart.map(currentItem => {
-	if (currentItem.name === name) {
+const changeQuantity = (cart, title, change) => cart.map(currentItem => {
+	if (currentItem.title === title) {
 		return {
 			...currentItem,
 			quantity: currentItem.quantity + change
@@ -37,4 +37,4 @@ const changeQuantity = (cart, name, change) => cart.map(currentItem => {
 	}
 });
 
-const remove = (cart, item) => cart.filter(currentItem => currentItem.name !== item.name);
+const remove = (cart, item) => cart.filter(currentItem => currentItem.title !== item.title);

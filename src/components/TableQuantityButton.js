@@ -5,7 +5,7 @@ const TableQuantityButton = ({ children, type, item }) => {
 
 	return (
 		<button
-			onClick={() => dispatch({ type, name: item.name })}
+			onClick={() => dispatch({ type, title: item.title })}
 			disabled={type === "Decrease" && item.quantity <= 1}
 		>
 			{children}

@@ -9,7 +9,7 @@ const TableActionButton = ({ item }) => {
 	return (
 		<button
 			onClick={() => dispatch({ type, item })}
-			disabled={type === "Add" && cart.find(c => c.name === item.name)}
+			disabled={type === "Add" && cart.find(c => c.title === item.title)}
 		>
 			{type}
 		</button>
