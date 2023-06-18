@@ -1,5 +1,5 @@
 import { useCart } from './store/cart/CartContext';
-import { products } from './store/products/Products';
+import { PRODUCTS } from './store/products/Products';
 
 import Header from './components/Header';
 import TableItems from './components/TableItems';
@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <section>
         <Header>Products available 🛍</Header>
-        <TableItems items={products}></TableItems>
+        <TableItems items={PRODUCTS}></TableItems>
       </section>
 
       <section>
