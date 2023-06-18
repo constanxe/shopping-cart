@@ -1,19 +1,16 @@
-import { useCartDispatch } from '../store/cart/CartContext';
-
+import TableQuantityButton from './TableQuantityButton';
 import TableActionButton from './TableActionButton';
 
 const TableItemRow = ({ item }) => {
-	const dispatch = useCartDispatch();
-
 	return (
 		<tr>
 			<td>{item.name}</td>
 			<td>{item.price}</td>
 			{item.quantity &&
 				<td>
-					<button onClick={() => dispatch({ type: 'Decrease', name: item.name })} disabled={item.quantity <= 1}>-</button>&nbsp;
+					<TableQuantityButton type="Decrease" item={item}>-</TableQuantityButton>&nbsp;
 					{item.quantity}&nbsp;
-					<button onClick={() => dispatch({ type: 'Increase', name: item.name })}>+</button>
+					<TableQuantityButton type="Increase" item={item}>+</TableQuantityButton>
 				</td>
 			}
 			<td><TableActionButton item={item}></TableActionButton></td>
