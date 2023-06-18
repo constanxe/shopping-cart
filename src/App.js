@@ -7,7 +7,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="/shopping-cart">
         <nav>
           <NavLink to="/products">Products</NavLink> |&nbsp;
           <NavLink to="/cart">Cart</NavLink> |&nbsp;
