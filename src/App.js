@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import { Products, Cart } from './views/index';
 
@@ -9,7 +9,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Products />} />
+          <Route path="/" element={<Navigate to="/products" />} />
+          <Route exact path="/products" element={<Products />} />
           <Route exact path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
