@@ -8,9 +8,10 @@
 - calculates total price of cart
 
 
-## Available Scripts
+## Setup
 
-In the project directory, you can run:
+In the project directory, run `npm i` to install the dependencies.\
+Therafter, you can run:
 
 ### `npm start`
 
