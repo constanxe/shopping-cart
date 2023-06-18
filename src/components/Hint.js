@@ -1,5 +1,5 @@
 const Hint = ({ children }) => {
-	return <small>❗ {children ?? "Start by adding a product"}</small>;
+	return <small>❗ {children ?? "Please try again later"}</small>;
 };
 
 export default Hint;
