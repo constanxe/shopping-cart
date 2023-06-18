@@ -10,8 +10,8 @@ export const cartSlice = createSlice({
       ...item,
       quantity: 1
     }],
-    changeQuantity: (state, { name, change }) => state.items.map(currentItem => {
-      if (currentItem.name === name) {
+    changeQuantity: (state, { title, change }) => state.items.map(currentItem => {
+      if (currentItem.title === title) {
         return {
           ...currentItem,
           quantity: currentItem.quantity + change
@@ -20,7 +20,7 @@ export const cartSlice = createSlice({
         return currentItem;
       }
     }),
-    remove: (state, { item }) => state.items.filter(currentItem => currentItem.name !== item.name),
+    remove: (state, { item }) => state.items.filter(currentItem => currentItem.title !== item.title),
     clear: (state) => state.items = []
   },
 })
