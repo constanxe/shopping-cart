@@ -25,7 +25,7 @@ const TableItems = ({ items }) => {
 
 			{isCart && <CartTableFooter></CartTableFooter>}
 		</table>
-	) : <p>Start by adding a product from above</p>;
+	) : <p>No items</p>;
 };
 
 export default TableItems;

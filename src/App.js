@@ -7,6 +7,8 @@ import TableItems from './components/TableItems';
 import './App.css';
 
 function App() {
+  const cart = useCart();
+
   return (
     <div className="App">
       <section>
@@ -16,7 +18,8 @@ function App() {
 
       <section>
         <Header>Your shopping cart 🛒</Header>
-        <TableItems items={useCart()}></TableItems>
+        <TableItems items={cart}></TableItems>
+        {!cart.length && <small>❗ Start by adding a product</small>}
       </section>
     </div>
   );
