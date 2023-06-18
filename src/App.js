@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import { useCart } from './context/cart/CartContext';
 
 import Header from './components/Header';
@@ -7,24 +9,27 @@ import './App.css';
 
 function App() {
   const cart = useCart();
-  const PRODUCTS = [
-    { name: 'A', price: 1 },
-    { name: 'B', price: 2 },
-    { name: 'C', price: 3 }
-  ];
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch('https://dummyjson.com/products')
+      .then((response) => response.json())
+      .then((data) => setProducts(data.products))
+      .catch((err) => console.error(err.message));
+ }, []);
 
   return (
     <div className="App">
       <section>
         <Header>Products available 🛍</Header>
-        <TableItems items={PRODUCTS}></TableItems>
-        {!PRODUCTS.length && <small>❗ Please try again later</small>}
+        <TableItems items={products}></TableItems>
+        {!products.length && <small>❗ Please try again later</small>}
       </section>
 
       <section>
         <Header>Your shopping cart 🛒</Header>
         <TableItems items={cart}></TableItems>
-        {!!PRODUCTS.length && !cart.length && <small>❗ Start by adding a product</small>}
+        {!!products.length && !cart.length && <small>❗ Start by adding a product</small>}
       </section>
     </div>
   );
