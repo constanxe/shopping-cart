@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { useSelector, useDispatch } from 'react-redux'
 
 export const cartSlice = createSlice({
   name: 'cart',
@@ -27,8 +26,5 @@ export const cartSlice = createSlice({
 })
 
 export const { add, changeQuantity, remove, clear } = cartSlice.actions
-
-export const useCart = () => useSelector((state) => state.cart.items);
-export const useDispatch = () => useDispatch();
 
 export default cartSlice.reducer
