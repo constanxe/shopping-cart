@@ -11,6 +11,7 @@ const TableActionButton = ({ item }) => {
 		<button
 			onClick={() => dispatch({ type, item })}
 			disabled={isAdded}
+			title={isAdded ? "Saved to cart" : "Click to save to cart"}
 		>
 			{isAdded ? "Added" : type}
 		</button>
