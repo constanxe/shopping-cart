@@ -1,4 +1,4 @@
-import { Header, TableItems } from '../components/index';
+import { Header, TableItems, Hint } from '../components/index';
 
 const PRODUCTS = [
 	{ name: 'A', price: 1 },
@@ -13,7 +13,7 @@ const Products = () => {
 		<section>
 			<Header>Products available 🛍</Header>
 			<TableItems items={products}></TableItems>
-			{!products.length && <small>❗ Please try again later</small>}
+			{!products.length && <Hint>Please try again later</Hint>}
 		</section>
   );
 }

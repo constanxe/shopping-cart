@@ -1,5 +1,5 @@
 import { useCart } from '../contexts/index';
-import { Header, TableItems } from '../components/index';
+import { Header, TableItems, Hint } from '../components/index';
 
 const Cart = () => {
 	const cart = useCart();
@@ -8,7 +8,7 @@ const Cart = () => {
 		<section>
 			<Header>Your shopping cart 🛒</Header>
 			<TableItems items={cart}></TableItems>
-			{!cart.length && <small>❗ Start by adding a product</small>}
+			{!cart.length && <Hint>Start by adding a product</Hint>}
 		</section>
   );
 }
