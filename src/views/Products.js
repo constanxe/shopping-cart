@@ -13,11 +13,11 @@ const Products = () => {
  }, []);
 
 	return (
-		<>
+		<div>
 			<Header>Products available 🛍</Header>
 			<TableItems items={products}></TableItems>
 			{!products.length && <Hint></Hint>}
-		</>
+		</div>
   );
 }
 
