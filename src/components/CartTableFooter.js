@@ -1,4 +1,4 @@
-import { useCart, useCartDispatch } from '../context/cart/CartContext';
+import { useCart, useCartDispatch } from '../contexts/index';
 
 const CartTableFooter = () => {
 	const items = useCart();

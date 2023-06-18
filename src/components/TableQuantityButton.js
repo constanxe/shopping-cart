@@ -1,4 +1,4 @@
-import { useCartDispatch } from '../context/cart/CartContext';
+import { useCartDispatch } from '../contexts/index';
 
 const TableQuantityButton = ({ children, type, item }) => {
 	const dispatch = useCartDispatch();

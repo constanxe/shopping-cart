@@ -1,7 +1,5 @@
-import { useCart } from './context/cart/CartContext';
-
+import { useCart } from './contexts/index';
 import { Header, TableItems } from './components/index';
-
 import './App.css';
 
 function App() {
