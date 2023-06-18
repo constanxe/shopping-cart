@@ -18,12 +18,13 @@ function App() {
       <section>
         <Header>Products available 🛍</Header>
         <TableItems items={PRODUCTS}></TableItems>
+        {!PRODUCTS.length && <small>❗ Please try again later</small>}
       </section>
 
       <section>
         <Header>Your shopping cart 🛒</Header>
         <TableItems items={cart}></TableItems>
-        {!cart.length && <small>❗ Start by adding a product</small>}
+        {!!PRODUCTS.length && !cart.length && <small>❗ Start by adding a product</small>}
       </section>
     </div>
   );
