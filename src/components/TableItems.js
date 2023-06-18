@@ -2,13 +2,15 @@ import TableItemRow from './TableItemRow';
 import CartTableFooter from './CartTableFooter';
 
 const TableItems = ({ items }) => {
+	const isCart = items?.[0]?.quantity;
+
 	return items?.length ? (
 		<table>
 			<thead>
 				<tr>
 					<th>Item</th>
 					<th>Price ($)</th>
-					{items[0].quantity &&
+					{isCart &&
 						<th>Quantity</th>
 					}
 					<th>Action</th>
@@ -21,7 +23,7 @@ const TableItems = ({ items }) => {
 				))}
 			</tbody>
 
-			{items[0].quantity && <CartTableFooter></CartTableFooter>}
+			{isCart && <CartTableFooter></CartTableFooter>}
 		</table>
 	) : <p>Start by adding a product from above</p>;
 };
