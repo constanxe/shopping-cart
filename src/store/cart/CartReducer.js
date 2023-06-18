@@ -26,15 +26,15 @@ const add = (cart, item) => [...cart, {
 	quantity: 1
 }];
 
-const changeQuantity = (cart, name, change) => cart.map(c => {
-	if (c.name === name) {
+const changeQuantity = (cart, name, change) => cart.map(currentItem => {
+	if (currentItem.name === name) {
 		return {
-			...c,
-			quantity: c.quantity + change
+			...currentItem,
+			quantity: currentItem.quantity + change
 		};
 	} else {
-		return c;
+		return currentItem;
 	}
 });
 
-const remove = (cart, item) => cart.filter(c => c.name !== item.name);
+const remove = (cart, item) => cart.filter(currentItem => currentItem.name !== item.name);
