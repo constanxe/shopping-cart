@@ -1,28 +1,12 @@
-import { useCart } from './contexts/index';
-import { Header, TableItems } from './components/index';
+import { Products, Cart } from './views/index';
+
 import './App.css';
 
 function App() {
-  const cart = useCart();
-  const PRODUCTS = [
-    { name: 'A', price: 1 },
-    { name: 'B', price: 2 },
-    { name: 'C', price: 3 }
-  ];
-
   return (
     <div className="App">
-      <section>
-        <Header>Products available 🛍</Header>
-        <TableItems items={PRODUCTS}></TableItems>
-        {!PRODUCTS.length && <small>❗ Please try again later</small>}
-      </section>
-
-      <section>
-        <Header>Your shopping cart 🛒</Header>
-        <TableItems items={cart}></TableItems>
-        {!!PRODUCTS.length && !cart.length && <small>❗ Start by adding a product</small>}
-      </section>
+      <Products />
+      <Cart />
     </div>
   );
 }
