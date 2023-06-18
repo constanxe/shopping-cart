@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 
-import { useCart } from './context/cart/CartContext';
-
-import Header from './components/Header';
-import TableItems from './components/TableItems';
+import { useCart } from './contexts/index';
+import { Header, TableItems } from './components/index';
 
 import './App.css';
 
