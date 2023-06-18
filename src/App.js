@@ -1,3 +1,5 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import { Products, Cart } from './views/index';
 
 import './App.css';
@@ -5,13 +7,12 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <section>
-        <Products />
-      </section>
-
-      <section>
-        <Cart />
-      </section>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Products />} />
+          <Route exact path="/cart" element={<Cart />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
